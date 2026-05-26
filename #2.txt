@@ -1,0 +1,65 @@
+Started by user N Lakshmin Narasimha
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/maven
+The recommended git tool is: NONE
+using credential both
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/maven/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/narasimha1231999/maven.git # timeout=10
+Fetching upstream changes from https://github.com/narasimha1231999/maven.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.52.0'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/narasimha1231999/maven.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 4a57122910cf2c8f98955e59be3264593442b654 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4a57122910cf2c8f98955e59be3264593442b654 # timeout=10
+Commit message: "Create server.xml"
+ > git rev-list --no-walk 4a57122910cf2c8f98955e59be3264593442b654 # timeout=10
+[maven] $ /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.sysgeeks.app:mavep >-----------------------
+[INFO] Building mavep 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ mavep ---
+[INFO] Deleting /var/lib/jenkins/workspace/maven/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ mavep ---
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/maven/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ mavep ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ mavep ---
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/maven/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ mavep ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ mavep ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- war:3.4.0:war (default-war) @ mavep ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [mavep] in [/var/lib/jenkins/workspace/maven/target/mavep-1.0-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Building war: /var/lib/jenkins/workspace/maven/target/mavep-1.0-SNAPSHOT.war
+[INFO] 
+[INFO] --- install:3.1.2:install (default-install) @ mavep ---
+[INFO] Installing /var/lib/jenkins/workspace/maven/pom.xml to /var/lib/jenkins/.m2/repository/com/sysgeeks/app/mavep/1.0-SNAPSHOT/mavep-1.0-SNAPSHOT.pom
+[INFO] Installing /var/lib/jenkins/workspace/maven/target/mavep-1.0-SNAPSHOT.war to /var/lib/jenkins/.m2/repository/com/sysgeeks/app/mavep/1.0-SNAPSHOT/mavep-1.0-SNAPSHOT.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.551 s
+[INFO] Finished at: 2026-05-26T13:47:28Z
+[INFO] ------------------------------------------------------------------------
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying /var/lib/jenkins/workspace/maven/target/mavep-1.0-SNAPSHOT.war to container Tomcat 9.x Remote with context testapp
+  [/var/lib/jenkins/workspace/maven/target/mavep-1.0-SNAPSHOT.war] is not deployed. Doing a fresh deployment.
+  Deploying [/var/lib/jenkins/workspace/maven/target/mavep-1.0-SNAPSHOT.war]
+Finished: SUCCESS
